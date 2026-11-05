@@ -1,46 +1,63 @@
 # Networkwalks-B84-Week-1-Wireshark-SOC-Labs---Atallah-Ali-Al-Hourani
 Hands-on network security, traffic analysis, and protocol inspection labs completed using Wireshark, covering FTP brute-force detection and VoIP/SIP/RTP analysis.
 
-# 🛡️ Network Security & Traffic Analysis Labs (Wireshark)
+<div align="center">
 
-This repository documents my hands-on investigations and labs focused on network traffic analysis, protocol inspection, and security monitoring using **Wireshark**. All labs were completed successfully with a **100% score (NO hints used)**.
+# 🛡️ Network Security & Traffic Analysis Labs
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Wireshark-SOC_Lab-1681B0?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark">
+  <img src="https://img.shields.io/badge/Score-100%25_(No_Hints)-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Score">
+  <img src="https://img.shields.io/badge/Protocols-FTP_|_SIP_|_RTP-orange?style=for-the-badge" alt="Protocols">
+</p>
 
-## 🚀 Skills & Techniques Mastered
+*Hands-on network investigations, brute-force analysis, and VoIP traffic inspection completed with absolute precision.*
 
-### 1. Brute-Force Attack Analysis (Lab 7)
-* **Attack Vector Isolation:** Used display filters (such as `ftp.response.code == 530` and `ftp.response.code == 230`) to isolate failed login attempts from successful sessions.
-* **Credential Discovery:** Analyzed plain-text control channels to identify attacker usernames, password guesses, and successful authentication tokens (`PASS`).
-* **SOC Investigation Mindset:** Tracked exact request-response sequences to reconstruct unauthorized access events.
-
-### 2. VoIP & SIP Signaling Analysis (Lab 8)
-* **Protocol Segregation:** Differentiated between signaling traffic (**SIP**) and audio media streams (**RTP**).
-* **Call Flow Reconstruction:** Filtered and inspected session initiation messages (`INVITE`, `100 Trying`, `180 Ringing`, `200 OK`) to identify callers, recipients, and extension numbers.
-* **Media Codec Inspection:** Analyzed RTP payload types (**PCMU / G.711**) and evaluated mitigation strategies against eavesdropping (e.g., implementing **SRTP** for encrypted voice communications).
+</div>
 
 ---
 
-## 📸 Lab Evidence & Screenshots
+## 🧭 Executive Summary
 
-### 🔑 FTP Brute-Force Detection
-*Isolating failed login responses and tracking down the successful authentication:*
-![FTP Brute Force Analysis](screenshots/image_9c57e3.jpg)
-
-### 📞 VoIP / SIP Call Setup
-*Tracing SIP session initiation headers and extension details:*
-![SIP Protocol Analysis](screenshots/image_9bf2e0.jpg)
-
-### 🔊 RTP Audio Packet Analysis
-*Inspecting G.711 PCMU voice codecs:*
-![RTP Traffic Analysis](screenshots/image_9beb41.jpg)
+This repository houses comprehensive documentation and deep-dive packet analysis from advanced network security labs. Every scenario was investigated from a Security Operations Center (SOC) perspective—isolating attack vectors, decoding session initiation signaling, and validating network hardening measures—achieving a **100% score without relying on hints**.
 
 ---
 
-## 🛠️ Tools Used
-* **Wireshark** (Packet Capture & Protocol Analysis)
-* **TCP/IP Stack & UDP/TCP Protocols**
-* **FTP & SIP/RTP Protocol Suites**
+## 🔬 Core Investigations & Methodologies
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🔐 Lab 7: FTP Brute-Force Detection</h3>
+      <ul>
+        <li><b>Attack Vector Isolation:</b> Applied specific display filters (<code>ftp.response.code == 530</code>) to track failed login storms.</li>
+        <li><b>Credential Recovery:</b> Traced clear-text control channels through <code>USER</code> and <code>PASS</code> requests.</li>
+        <li><b>Access Verification:</b> Pinpointed the exact packet returning <code>230 Login successful</code> and isolated the compromised credential (<code>Sunshine99</code>).</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📞 Lab 8: VoIP & SIP Signaling Analysis</h3>
+      <ul>
+        <li><b>Protocol Segregation:</b> Differentiated between control plane signaling (<b>SIP</b>) and media transport streams (<b>RTP</b>).</li>
+        <li><b>Call Flow Reconstruction:</b> Inspected session initiation headers (<code>INVITE</code>, <code>100 Trying</code>, <code>180 Ringing</code>, <code>200 OK</code>).</li>
+        <li><b>Codec Inspection & Mitigations:</b> Analyzed <b>PCMU / G.711</b> audio payload types and evaluated **SRTP** encryption for eavesdropping prevention.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
-*Completed as part of practical network security training.*
+
+## 🛠️ Technology Stack & Protocols
+
+* **Analysis Tool:** Wireshark
+* **Network Protocols:** TCP, UDP, FTP, SIP (Session Initiation Protocol), RTP (Real-time Transport Protocol), ARP, DNS
+* **Security Concepts:** Brute-force detection, credential harvesting, voice stream decryption risks, SRTP implementation
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── screenshots/         # Contains step-by-step lab completion visual evidence
+└── README.md            # Project documentation and summary
